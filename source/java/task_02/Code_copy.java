@@ -192,12 +192,232 @@ class Conversion {
 }
 
 
+//
+class Promote {
+    public static void main(String[] args) {
+        byte b = 42;
+        char c = 'a';
+        short s = 1024;
+        int i = 50000;
+        float f = 5.67f;
+        double d = .1234;
+        double result = (f * b) + (i / c) - (d * s);
+        System.out.println((f * b) + " + " + (i / c) + " - " + (d * s));
+        System.out.println("result = " + result);
+    }
+}
+
+//============================================================
+
+// продемонстрировать применение одномерного массива
+class Array {
+    public static void main(String[] args) {
+        int month_days[];
+        month_days = new int[12];
+        month_days[0] = 31;
+        month_days[1] = 28;
+        month_days[2] = 31;
+        month_days[3] = 30;
+        month_days[4] = 31;
+        month_days[5] = 30;
+        month_days[6] = 31;
+        month_days[7] = 31;
+        month_days[8] = 30;
+        month_days[9] = 31;
+        month_days[10] = 30;
+        month_days[11] = 31;
+
+        System.out.println("В апреле " + month_days[3] + " дней");
+    }
+}
+
+// Усовершенствованная версия предыдущей программы
+
+class AutoArray {
+    public static void main(String[] args) {
+        int month_days[] = {31, 28, 31, 30, 31, 30, 31, 30, 31, 30, 31};
+        System.out.println("В апреле " + month_days[3] + " дней");
+    }
+}
+
+// Вычисление среднего из массива значений
+
+class Average {
+    public static void main(String[] args) {
+        double nums[] = {10.1, 11.2, 12.3, 13.4, 14.5};
+        double result = 0;
+        int i;
+
+        for (i=0; i<5; i++) {
+            result = result + nums[i];
+        }
+        System.out.println("Среднее значение равно " + result / 5);
+    }
+}
 
 
 
+// Продемонстрировать применение двухмерного массива
+
+class TwoDArray {
+    public static void main(String[] args) {
+        int twoD[][] = new int[4][5];
+        int i, j, k = 0;
+
+        for (i=0; i<4; i++) {
+            for (j=0; j<5; j++) {
+                twoD[i][j] = k;
+                k++;
+            }
+        }
+        for (i=0; i<4; i++) {
+            for (j=0; j<5; j++) {
+                System.out.print(twoD[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+// Резервирование памяти вручную для массива с разной размерностью второго измерения
+
+class TwoDAgain {
+    public static void main(String[] args) {
+        int twoD[][] = new int[4][];
+        twoD[0] = new int[1];
+        twoD[1] = new int[2];
+        twoD[2] = new int[3];
+        twoD[3] = new int[4];
+
+        int i, j, k = 0;
+
+        for (i=0; i<4; i++) {
+            for (j=0; j<i+1; j++) {
+                twoD[i][j] = k;
+                k++;
+            }
+        }
+
+        for (i=0; i<4; i++) {
+            for (j=0; j<i+1; j++) {
+                System.out.print(twoD[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+// Инициализировать двухмерный массив
+
+class Matrix {
+    public static void main(String[] args) {
+        double m[][] = {
+            {0*0, 1*0, 2*0, 3*0},
+            {0*1, 1*1, 2*1, 3*1},
+            {0*2, 1*2, 2*2, 3*2},
+            {0*3, 1*3, 2*3, 3*3}
+        };
+        int i, j;
+
+        for (i=0; i<4; i++) {
+            for (j=0; j<4; j++) {
+                System.out.println(m[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
 
 
+// Продемонстрировать применени трехмерного массива
 
+class ThreeDMatrix {
+    public static void main(String[] args) {
+        int threeD[][][] = new int[3][4][5];
+        int i, j, k;
+
+        for (i=0; i<3; i++)
+            for (j=0; j<4; j++)
+                for (k=0; k<5; k++)
+                    threeD[i][j][k] = i*j*k;
+
+        for (i=0; i<3; i++) {
+            for (j = 0; j < 4; j++) {
+                for (k = 0; k < 5; k++)
+                    System.out.print(threeD[i][j][k] + " ");
+                System.out.println();
+            }
+            System.out.println();
+        }
+    }
+}
+
+// Продемонстрировать основные арифметиеские операции
+
+class BasicMath {
+    public static void main(String[] args) {
+        // арфметические операции над целочисленными значениями
+        System.out.println("елочисленная арфметика");
+        int a = 1 + 1;
+        int b = a * 3;
+        int c = b / 4;
+        int d = c - a;
+        int e = -d;
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("c = " + c);
+        System.out.println("d = " + d);
+        System.out.println("e = " + e);
+
+        // арифметческие операции над значениями типа double
+
+        System.out.println("\nАрифметика с плавающей точкой");
+        double da = 1 + 1;
+        double db = da * 3;
+        double dc = db / 4;
+        double dd = dc - a;
+        double de = -dd;
+
+        System.out.println("da = " + da);
+        System.out.println("db = " + db);
+        System.out.println("dc = " + dc);
+        System.out.println("dd = " + dd);
+        System.out.println("de = " + de);
+    }
+}
+
+
+// Продемонстрировать применение операции %
+
+class Modulus {
+    public static void main(String[] args) {
+        int x = 42;
+        double y = 42.25;
+
+        System.out.println("x mod 10 = " + x % 10);
+        System.out.println("y mod 10 = " + y % 10);
+    }
+}
+
+
+// Продемонстрировать применение нескольких операций с присваиванием
+
+class OpEquals {
+    public static void main(String[] args) {
+        int a = 1;
+        int b = 2;
+        int c = 3;
+        a += 5;
+        b *= 4;
+        c += a * b;
+        c %= 6;
+
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("c = " + c);
+    }
+}
 
 
 

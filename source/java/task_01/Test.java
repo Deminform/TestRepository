@@ -1,5 +1,7 @@
 package task_01;
 
+import java.util.Objects;
+
 public class Test {
 
     public static void main(String[] args) {
@@ -11,6 +13,8 @@ public class Test {
     }
 
     public static boolean checkNumber(int num){
+        Object a = null;
+        String b = null;
         for (int i = 2; i <= num; i++) {
             for (int j = 2; j <= num; j++) {
                 if ((i * j) > num) {

@@ -419,6 +419,71 @@ class OpEquals {
     }
 }
 
+// Применене операции инкремента ++
+
+class IncDec {
+    public static void main(String[] args) {
+        int a = 1;
+        int b = 2;
+        int c;
+        int d;
+
+        c = ++b;
+        d = a++;
+        c++;
+
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        System.out.println("c = " + c);
+        System.out.println("d = " + d);
+    }
+}
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//                     продолжать со 108 страницы
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Продемонстрировать применеие логиеских операций
+
+class BootLogic {
+    public static void main(String[] args) {
+        boolean a = true;
+        boolean b = false;
+        boolean c = a | b;
+        boolean d = a & b;
+        boolean e = a ^ b;
+        boolean f = (!a & b) | (a & !b);
+        boolean g = !a;
+
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+        System.out.println(e);
+        System.out.println(f);
+        System.out.println(g);
+    }
+}
+
+
+// Продемонстрировать применение тернарной операции ?
+
+class Ternary {
+    public static void main(String[] args) {
+        int i, k;
+        i = 10;
+        k = i < 0 ? -i : i; // получить абсолютное знаение переменной i
+        System.out.print("Абсолютное значение ");
+        System.out.println(i + " равно " + k);
+
+        i = -10;
+        k = i < 0 ? -i : i; // полуить абсолютное значение переменной i
+
+        System.out.print("Абсолютное значение ");
+        System.out.println(i + " равно " + k);
+    }
+}
+
 
 
 

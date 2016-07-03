@@ -484,7 +484,12 @@ class Ternary {
     }
 }
 
+/*
+стрница 142. Вопрос:
+for ( ; ! done; ) { System.out. println("i равно " + i); if(i == 10) done = true;
+ */
 
+// страниаца 144
 
 
 

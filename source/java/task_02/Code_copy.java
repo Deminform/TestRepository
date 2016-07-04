@@ -1078,12 +1078,131 @@ class Return {
 }
 
 
+///////////////////////////////////////////////////////////// Глава 6
+
+
+/*
+Программа, использующая класс Box
+Присвоить исходному файлу имя BoxDemo.java
+ */
+
+class Box {
+    double width;
+    double height;
+    double depth;
+
+    // ввести объем параллелепипеда
+//    void volume() {
+//        System.out.print("Объем равен ");
+//        System.out.println(width*height*depth);
+//    }
+
+    double volume() {
+        return width*height*depth;
+    }
+
+}
+
+
+// В этом классе объявляется объект типа Box
+
+class BoxDemo {
+    public static void main(String[] args) {
+        Box mybox = new Box();
+        double vol;
+        // присвоить значение переменным экземпляра mybox
+        mybox.width = 10;
+        mybox.height = 20;
+        mybox.depth = 15;
+        // расчитать объем параллелипипеда
+        vol = mybox.width * mybox.height * mybox.depth;
+        System.out.println("Объем равен " + vol);
+    }
+}
+
+
+class BoxDemo2 {
+    public static void main(String[] args) {
+        Box mybox1 = new Box();
+        Box mybox2 = new Box();
+        double vol;
+
+        // присвоить значения переменным
+        mybox1.width = 10;
+        mybox1.height = 20;
+        mybox1.depth = 15;
+
+        // присвоить другие значения переменным экземпляра mybox2
+
+        mybox2.width = 3;
+        mybox2.height = 6;
+        mybox2.depth = 9;
+
+        // расчитать объем первого параллелипипеда
+
+        vol = mybox1.width * mybox1.height * mybox1.depth;
+        System.out.println("Объем равен " + vol);
+
+        vol = mybox2.width * mybox2.height * mybox2.depth;
+        System.out.println("Объем равен " + vol);
+    }
+}
+
+// Класс это логическая конструкция определящая взаимосвязь между его объектами
+
+class BoxDemo3 {
+    public static void main(String[] args) {
+        Box mybox1 = new Box();
+        Box mybox2 = new Box();
+
+        //присвоить значение переменным экземпляра mybox1
+        mybox1.width = 10;
+        mybox1.height = 20;
+        mybox1.depth = 15;
+        //присвоить значение переменным экземпляра mybox2
+        mybox2.width = 3;
+        mybox2.height = 6;
+        mybox2.depth = 9;
+
+
+        // Вывести объем первого параллелепипеда
+        mybox1.volume();
+
+        // Вывести объем второгго параллелепипеда
+        mybox2.volume();
+    }
+}
 
 
 
+// Теперь метод volume() возвращает объем параллелепипеда
+
+class BoxDemo4 {
+    public static void main(String[] args) {
+        Box mybox1 = new Box();
+        Box mybox2 = new Box();
+        double vol;
+
+        //присвоить значение переменным экземпляра mybox1
+        mybox1.width = 10;
+        mybox1.height = 20;
+        mybox1.depth = 15;
+        //присвоить значение переменным экземпляра mybox2
+        mybox2.width = 3;
+        mybox2.height = 6;
+        mybox2.depth = 9;
+
+        // получить объем первого параллелепипеда
+        vol = mybox1.volume();
+        System.out.println();
+        System.out.println("Объем равен " + vol);
 
 
-
+        // Получить объем второгго параллелепипеда
+        vol = mybox2.volume();
+        System.out.println("Объем равен " + vol);
+    }
+}
 
 
 

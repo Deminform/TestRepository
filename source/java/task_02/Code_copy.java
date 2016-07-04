@@ -2,6 +2,8 @@ package task_02;
 
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
+import java.io.IOException;
+
 /**
  * Created by Demchenko Sergey on 19.06.2016.
  */
@@ -484,12 +486,395 @@ class Ternary {
     }
 }
 
-/*
-стрница 142. Вопрос:
-for ( ; ! done; ) { System.out. println("i равно " + i); if(i == 10) done = true;
- */
 
-// страниаца 144
+
+// продемонстрировать применение конструкции if-tlse-if
+
+class IfElse {
+    public static void main(String[] args) {
+        int month = 4;
+        String season;
+        if (month == 12 || month == 1 || month == 2) {
+            season = "зиме";
+        } else if (month == 3 || month == 4 || month == 5)
+            season = "весне";
+        else if (month == 6 || month == 7 || month == 8)
+            season = "лету";
+        else if (month == 9 || month == 10 || month == 11)
+            season = "осени";
+        else
+            season = "вымышленныым месяцам";
+        System.out.println("Апрель отногсится к " + season + ".");
+    }
+}
+
+// Простой пример примененич оператора switch
+
+class SampleSwitch {
+    public static void main(String[] args) {
+        for (int i=0; i<6; i++) {
+            switch (i) {
+                case 0:
+                    System.out.println("i равно нулю");
+                    break;
+                case 1:
+                    System.out.println("i равно единице");
+                    break;
+                case 2:
+                    System.out.println("i равно двум");
+                    break;
+                case 3:
+                    System.out.println("i равно трем");
+                    break;
+                default:
+                    System.out.println("i больше трех");
+            }
+        }
+    }
+}
+
+
+//В операторе switch не обязательно указывать операторы break
+
+class MissingBreak {
+    public static void main(String[] args) {
+        for (int i=0; i<12; i++) {
+            switch (i) {
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    System.out.println("i мекньше 5");
+                    break;
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    System.out.println("i меньше 10");
+                    break;
+                default:
+                    System.out.println("i равно или больше 10");
+            }
+        }
+    }
+}
+
+
+
+// усовершенствованная версия программы, в которой оперделяется принадлежность месяца времени года
+class Switch {
+    public static void main(String[] args) {
+        int month = 4;
+        String season;
+
+        switch (month) {
+            case 12:
+            case 1:
+            case 2:
+                season = "зиме";
+                break;
+            case 3:
+            case 4:
+            case 5:
+                season = "весне";
+                break;
+            case 6:
+            case 7:
+            case 8:
+                season = "лету";
+                break;
+            case 9:
+            case 10:
+            case 11:
+                season = "омени";
+                break;
+            default:
+                season = "вымышленным месяцам";
+        }
+        System.out.println("Апрелоь относится к " + season + ".");
+    }
+}
+
+
+// использовать символьные строки для управления оператором switch
+
+class StringSwitch {
+    public static void main(String[] args) {
+        String str = "два";
+        switch (str) {
+            case "один":
+                System.out.println("один");
+                break;
+            case "два":
+                System.out.println("два");
+                break;
+            case "три":
+                System.out.println("три");
+                break;
+            default:
+                System.out.println("не совпало");
+                break;
+        }
+    }
+}
+
+// продемонстрировать применение оператора цикла while
+
+class While {
+    public static void main(String[] args) {
+        int n = 10;
+        while (n > 0) {
+            System.out.println("такт " + n);
+            n--;
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+
+// Целевая часть цикла может быть пустой
+
+class NoBody {
+    public static void main(String[] args) {
+        int i, j;
+        i = 100;
+        j = 200;
+
+        // расчитать среднее значение переменных i и j
+        while (++i < --j); // у этого цикла отсутствует тело
+        System.out.println("Среденее значение равно " + i);
+    }
+}
+
+// продемонстрировать применение оператора цикла do-while
+
+ class DoWhile {
+     public static void main(String[] args) {
+         int n = 10;
+         do {
+             System.out.println("такт " + n);
+             n--;
+             try {
+                 Thread.sleep(1000);
+             } catch (InterruptedException e) {
+                 e.printStackTrace();
+             }
+         } while (n > 0);
+     }
+ }
+
+
+// Использовть оператор цикла do-wgile для выбора пункта меню
+
+class Menu {
+    public static void main(String[] args) throws IOException {
+        char choise;
+        do {
+            System.out.println("Справка по оператору: ");
+            System.out.println("    1. if");
+            System.out.println("    2. switch");
+            System.out.println("    3. while");
+            System.out.println("    4. do-while");
+            System.out.println("    5. for\n");
+            System.out.println("Выберите нужный пункт: ");
+            choise = (char) System.in.read();
+        } while (choise < '1' || choise > '5');
+
+        System.out.println("\n");
+
+        switch (choise) {
+            case '1':
+                System.out.println("if:\n");
+                System.out.println("if(условие) оператор;");
+                System.out.println("else оператор");
+                break;
+            case '2':
+                System.out.println("switch:\n");
+                System.out.println("switch(выражение) оператор;");
+                System.out.println(" case константа:");
+                System.out.println(" последовательность операторов");
+                System.out.println(" break;");
+                System.out.println(" // ...");
+                System.out.println("}");
+                break;
+            case '3':
+                System.out.println("while:\n");
+                System.out.println("while(условие) оператор;");
+                break;
+            case '4':
+                System.out.println("do-while:\n");
+                System.out.println("do {");
+                System.out.println("    оператор;");
+                System.out.println("} while (условие);");
+                break;
+            case '5':
+                System.out.println("for:\n");
+                System.out.println("for(инициализация: условие; итерация)");
+                System.out.println(" оператор:");
+                break;
+        }
+    }
+}
+
+
+
+// продемонстрировать применение оператора цикла for
+
+class ForTick {
+    public static void main(String[] args) {
+        int n;
+        for (n=10; n>0; n--)
+            System.out.println("такт " + n);
+    }
+}
+
+
+// Объявить переменную управления циклом в самом цикле for
+
+class ForTick2 {
+    public static void main(String[] args) {
+        for (int n=10; n>0; n--)
+            System.out.println("такт" + n);
+    }
+}
+
+
+// проверить на простые числа
+
+class FindPrime {
+    public static void main(String[] args) {
+        int num;
+        boolean isPrime;
+
+        num = 14;
+
+        if (num < 2) isPrime = false;
+        else isPrime = true;
+
+        for (int i=2; i <= num/i; i++) {
+            if ((num % i) == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime)
+            System.out.println("простое число");
+        else
+            System.out.println("Не простое число");
+    }
+}
+
+
+
+class Sample {
+    public static void main(String[] args) {
+        int a, b;
+        b = 4;
+        for (a=1; a<b; a++) {
+            System.out.println("a = " + a);
+            System.out.println("b = " + b);
+            b--;
+        }
+    }
+}
+
+// Использование запятой в операторе цикла for
+
+class Comma {
+    public static void main(String[] args) {
+        int a, b;
+        for (a=1, b=4; a<b; a++, b--) {
+            System.out.println("a = " + a);
+            System.out.println("b = " + b);
+        }
+    }
+}
+
+// отдельные части оператора цикла for могут отсутствовать
+
+class ForVar {
+    public static void main(String[] args) {
+        int i;
+        boolean done = false;
+
+        i = 0;
+        for ( ; !done; ) {
+            if (i == 10) done = true;
+            i++;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

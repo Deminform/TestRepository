@@ -813,24 +813,269 @@ class ForVar {
 
 
 
+// применение цикла for в стиле for each
+
+class ForEach {
+    public static void main(String[] args) {
+        int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int sum = 0;
+
+        // использовать ицкл в стиле for each для вывода и суммирования значений
+        for (int x : nums) {
+            System.out.println("Значение равно: " + x);
+            sum += x;
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Сумма равно: " + sum);
+    }
+}
+
+// применение оператора break в цикле for в стиле for each
+
+class ForEach2 {
+    public static void main(String[] args) {
+        int sum = 0;
+        int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        // использовать цикл for в стиле for each для вывода и суммирования значений из части массива
+
+        for (int x : nums) {
+            System.out.println("Значение равно: " + x);
+            sum += x;
+            if (x == 5)
+                break;; // прервать цикл после получения 5 значений
+        }
+
+        System.out.println("Сумма пяти первых элементов равно: " + sum);
+    }
+}
 
 
+// переменная цикла в стиле for each доступна только для чтения
+
+class NoChange {
+    public static void main(String[] args) {
+        int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        for (int x : nums) {
+            System.out.print(x + " ");
+            x = x * 10; // этот оператор не оказывает никакого влияния  на массив nums
+        }
+
+        System.out.println();
+
+        for (int x : nums) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+    }
+}
 
 
+// Применение цикла for в стиле for each для обращения к двухмерному массиву
+
+class ForEach3 {
+    public static void main(String[] args) {
+        int sum = 0;
+        int nums[][] = new int[3][5];
+
+        // присвоить значение элементам массива nums
+        for (int i = 0; i < 3; i++)
+            for (int j = 0; j < 5; j++)
+                nums[i][j] = (i+1)*(j+1);
+
+        // использовать цикл for в стиле for each для вывода и суммирования значений
+
+        for (int x[] : nums) {
+            for (int y : x) {
+                System.out.println("Значение равно: " + y);
+                sum += y;
+            }
+        }
+        System.out.println("Сумма: " + sum);
+    }
+}
 
 
+// Поиск в массиве с применение цикла for в стиле for each
+
+class Search {
+    public static void main(String[] args) {
+        int nums[] = {6, 8, 3, 7, 5, 6, 1, 4};
+        int vsl = 5;
+        boolean found = false;
+
+        //использовать цикл for в стиле for each для поиска значения переменноц vsl в массиве nums
+
+        for (int x : nums) {
+            if (x == vsl) {
+                found = true;
+                break;
+            }
+        }
+        if (found)
+            System.out.println("Значение найдено!");
+    }
+}
+
+// ЦИклы могут быть вложенными
+
+class Nested {
+    public static void main(String[] args) {
+        int i, j;
+
+        for (i=0; i<10; i++) {
+            for (j=i; j<10; j++)
+                System.out.print(".");
+            System.out.println();
+        }
+    }
+}
+
+// Применение оператора break для выхода из цикла\
+
+class BreakLoop {
+    public static void main(String[] args) {
+        for (int i=0; i<100; i++) {
+            if (i == 10) break;
+            System.out.println("i: " + i);
+        }
+        System.out.println("Цикл завершен");
+    }
+}
 
 
+// Применение оператора break для выхода из цикла while
+
+class BreakLoop2 {
+    public static void main(String[] args) {
+        int i =0;
+        while (i < 100) {
+            if (i == 10) break;
+            System.out.println("i: " + i);
+            i++;
+        }
+        System.out.println("Цикл завершен");
+    }
+}
 
 
+// Применение оператора break во вложенных циклах
+class breakLoop3 {
+    public static void main(String[] args) {
+        for (int i=0; i<3; i++) {
+            System.out.print("Проход " + i + ": ");
+            for (int j=0; j<100; j++) {
+                if (j == 10) break;
+                System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+        System.out.println("Циклы завершены");
+    }
+}
 
 
+// Применение оператора break в качестве цивилизованной формы оператора goto
+
+class Break {
+    public static void main(String[] args) {
+        boolean t = true;
+
+        first: {
+            second: {
+                third: {
+                    System.out.println("Предшествует оператору break.");
+                    if (t) break second;
+                    System.out.println("этот оператор не будет выполнятся");
+                }
+                System.out.println("этот оператор не будет выполнятся");
+            }
+            System.out.println("этот оператор следует за блоком second");
+        }
+    }
+}
 
 
+// Применение оператора break для выхода из вложенных циклов
+
+class BreakLoop4 {
+    public static void main(String[] args) {
+        outer: for (int i=0; i<3; i++) {
+            System.out.print("Проход " + i + ": ");
+            for (int j=0; j<100; j++) {
+                if (j == 10) break outer;
+                System.out.print(j + " ");
+
+            }
+            System.out.println("Эта строка не будет выводиться");
+        }
+        System.out.println("Циклы завершены.");
+    }
+}
 
 
+// Эта программа сожержит ошибку
+
+class BreakErr {
+    public static void main(String[] args) {
+        one: for (int i=0; i<3; i++) {
+            System.out.println("Проход " + i + ": ");
+        }
+
+        for (int j=0; j<100; j++) {
+            //if (j  == 10) break one; ОШИБКА
+            System.out.println(j + " ");
+        }
+    }
+}
 
 
+// Продемонстрировать применение оператора continue
+
+class Continue {
+    public static void main(String[] args) {
+        for (int i=0; i<10; i++) {
+            System.out.print(i + " ");
+            if (i%2 == 0) continue;
+            System.out.println("");
+        }
+    }
+}
+
+
+// применение оператора continue с меткой
+
+class ContinueLabel {
+    public static void main(String[] args) {
+        outer: for (int i=0; i<10; i++) {
+            for (int j=0; j<10; j++) {
+                if (j > i) {
+                    System.out.println();
+                    continue outer;
+                }
+                System.out.print(" " + (i * j));
+            }
+        }
+        System.out.println();
+    }
+}
+
+
+// Продемонстрировать применение оператора return
+
+class Return {
+    public static void main(String[] args) {
+        boolean t = true;
+
+        System.out.println("До возврата");
+        if (t) return;
+        System.out.println("Этот оператор выполняться не будет.");
+    }
+}
 
 
 

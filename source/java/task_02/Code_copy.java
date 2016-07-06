@@ -1083,11 +1083,11 @@ class Return {
 
 
 /*
-Программа, использующая класс BoxOne
-Присвоить исходному файлу имя BoxOneDemo.java
+Программа, использующая класс DoxNewOne
+Присвоить исходному файлу имя DoxNewOneDemo.java
  */
 
-class BoxOne {
+class DoxNewOne {
     double width;
     double height;
     double depth;
@@ -1097,14 +1097,14 @@ class BoxOne {
 //        System.out.print("Объем равен ");
 //        System.out.println(width*height*depth);
 //    }
-    BoxOne() {
-        System.out.println("Конструирование объекта BoxOne");
+    DoxNewOne() {
+        System.out.println("Конструирование объекта DoxNewOne");
         width = 10;
         height = 10;
         depth = 10;
     }
 
-    BoxOne(double w, double h, double d) {
+    DoxNewOne(double w, double h, double d) {
         width = w;
         height = h;
         depth = d;
@@ -1123,72 +1123,72 @@ class BoxOne {
 }
 
 
-// В этом классе объявляется объект типа BoxOne
+// В этом классе объявляется объект типа DoxNewOne
 
-class BoxOneDemo {
+class DoxNewOneDemo {
     public static void main(String[] args) {
-        BoxOne myBoxOne = new BoxOne();
+        DoxNewOne myDoxNewOne = new DoxNewOne();
         double vol;
-        // присвоить значение переменным экземпляра myBoxOne
-        myBoxOne.width = 10;
-        myBoxOne.height = 20;
-        myBoxOne.depth = 15;
+        // присвоить значение переменным экземпляра myDoxNewOne
+        myDoxNewOne.width = 10;
+        myDoxNewOne.height = 20;
+        myDoxNewOne.depth = 15;
         // расчитать объем параллелипипеда
-        vol = myBoxOne.width * myBoxOne.height * myBoxOne.depth;
+        vol = myDoxNewOne.width * myDoxNewOne.height * myDoxNewOne.depth;
         System.out.println("Объем равен " + vol);
     }
 }
 
 
-class BoxOneDemo2 {
+class DoxNewOneDemo2 {
     public static void main(String[] args) {
-        BoxOne myBoxOne1 = new BoxOne();
-        BoxOne myBoxOne2 = new BoxOne();
+        DoxNewOne myDoxNewOne1 = new DoxNewOne();
+        DoxNewOne myDoxNewOne2 = new DoxNewOne();
         double vol;
 
         // присвоить значения переменным
-        myBoxOne1.width = 10;
-        myBoxOne1.height = 20;
-        myBoxOne1.depth = 15;
+        myDoxNewOne1.width = 10;
+        myDoxNewOne1.height = 20;
+        myDoxNewOne1.depth = 15;
 
-        // присвоить другие значения переменным экземпляра myBoxOne2
+        // присвоить другие значения переменным экземпляра myDoxNewOne2
 
-        myBoxOne2.width = 3;
-        myBoxOne2.height = 6;
-        myBoxOne2.depth = 9;
+        myDoxNewOne2.width = 3;
+        myDoxNewOne2.height = 6;
+        myDoxNewOne2.depth = 9;
 
         // расчитать объем первого параллелипипеда
 
-        vol = myBoxOne1.width * myBoxOne1.height * myBoxOne1.depth;
+        vol = myDoxNewOne1.width * myDoxNewOne1.height * myDoxNewOne1.depth;
         System.out.println("Объем равен " + vol);
 
-        vol = myBoxOne2.width * myBoxOne2.height * myBoxOne2.depth;
+        vol = myDoxNewOne2.width * myDoxNewOne2.height * myDoxNewOne2.depth;
         System.out.println("Объем равен " + vol);
     }
 }
 
 // Класс это логическая конструкция определящая взаимосвязь между его объектами
 
-class BoxOneDemo3 {
+class DoxNewOneDemo3 {
     public static void main(String[] args) {
-        BoxOne myBoxOne1 = new BoxOne();
-        BoxOne myBoxOne2 = new BoxOne();
+        DoxNewOne myDoxNewOne1 = new DoxNewOne();
+        DoxNewOne myDoxNewOne2 = new DoxNewOne();
 
-        //присвоить значение переменным экземпляра myBoxOne1
-        myBoxOne1.width = 10;
-        myBoxOne1.height = 20;
-        myBoxOne1.depth = 15;
-        //присвоить значение переменным экземпляра myBoxOne2
-        myBoxOne2.width = 3;
-        myBoxOne2.height = 6;
-        myBoxOne2.depth = 9;
+        //присвоить значение переменным экземпляра myDoxNewOne1
+        myDoxNewOne1.width = 10;
+        myDoxNewOne1.height = 20;
+        myDoxNewOne1.depth = 15;
+        //присвоить значение переменным экземпляра myDoxNewOne2
+        myDoxNewOne2.width = 3;
+        myDoxNewOne2.height = 6;
+        myDoxNewOne2.depth = 9;
 
 
         // Вывести объем первого параллелепипеда
-        myBoxOne1.volume();
+        myDoxNewOne1.volume();
 
         // Вывести объем второгго параллелепипеда
-        myBoxOne2.volume();
+        myDoxNewOne2.volume();
     }
 }
 
@@ -1196,28 +1196,28 @@ class BoxOneDemo3 {
 
 // Теперь метод volume() возвращает объем параллелепипеда
 
-class BoxOneDemo4 {
+class DoxNewOneDemo4 {
     public static void main(String[] args) {
-        BoxOne myBoxOne1 = new BoxOne();
-        BoxOne myBoxOne2 = new BoxOne();
+        DoxNewOne myDoxNewOne1 = new DoxNewOne();
+        DoxNewOne myDoxNewOne2 = new DoxNewOne();
         double vol;
 
-        //присвоить значение переменным экземпляра myBoxOne1
-        myBoxOne1.width = 10;
-        myBoxOne1.height = 20;
-        myBoxOne1.depth = 15;
-        //присвоить значение переменным экземпляра myBoxOne2
-        myBoxOne2.width = 3;
-        myBoxOne2.height = 6;
-        myBoxOne2.depth = 9;
+        //присвоить значение переменным экземпляра myDoxNewOne1
+        myDoxNewOne1.width = 10;
+        myDoxNewOne1.height = 20;
+        myDoxNewOne1.depth = 15;
+        //присвоить значение переменным экземпляра myDoxNewOne2
+        myDoxNewOne2.width = 3;
+        myDoxNewOne2.height = 6;
+        myDoxNewOne2.depth = 9;
 
         // получить объем первого параллелепипеда
-        vol = myBoxOne1.volume();
+        vol = myDoxNewOne1.volume();
         System.out.println("Объем равен " + vol);
 
 
         // Получить объем второгго параллелепипеда
-        vol = myBoxOne2.volume();
+        vol = myDoxNewOne2.volume();
         System.out.println("Объем равен " + vol);
     }
 }
@@ -1227,43 +1227,43 @@ class BoxOneDemo4 {
 
 // в этой программе применяется метод с параметрами
 
-class BoxOneDemo5 {
+class DoxNewOneDemo5 {
     public static void main(String[] args) {
-        BoxOne myBoxOne1 = new BoxOne();
-        BoxOne myBoxOne2 = new BoxOne();
+        DoxNewOne myDoxNewOne1 = new DoxNewOne();
+        DoxNewOne myDoxNewOne2 = new DoxNewOne();
         double vol;
 
-        //инициализировать каждый экземпляр класса BoxOne
-        myBoxOne1.setDim(10, 20, 15);
-        myBoxOne2.setDim(3, 6, 9);
+        //инициализировать каждый экземпляр класса DoxNewOne
+        myDoxNewOne1.setDim(10, 20, 15);
+        myDoxNewOne2.setDim(3, 6, 9);
 
         // получить объем первого параллелепипеда
-        vol = myBoxOne1.volume();
+        vol = myDoxNewOne1.volume();
         System.out.println("Объем равен " + vol);
 
 
         // Получить объем второгго параллелепипеда
-        vol = myBoxOne2.volume();
+        vol = myDoxNewOne2.volume();
         System.out.println("Объем равен " + vol);
     }
 }
 
 //В данном примере используется конструктор
 
-class BoxOneDemo6 {
+class DoxNewOneDemo6 {
     public static void main(String[] args) {
-        BoxOne myBoxOne1 = new BoxOne();
-        BoxOne myBoxOne2 = new BoxOne();
+        DoxNewOne myDoxNewOne1 = new DoxNewOne();
+        DoxNewOne myDoxNewOne2 = new DoxNewOne();
 
         double vol;
 
         // получить объем первого параллелепипеда
-        vol = myBoxOne1.volume();
+        vol = myDoxNewOne1.volume();
         System.out.println("Объем равен " + vol);
 
 
         // Получить объем второгго параллелепипеда
-        vol = myBoxOne2.volume();
+        vol = myDoxNewOne2.volume();
         System.out.println("Объем равен " + vol);
 
     }
@@ -1271,20 +1271,20 @@ class BoxOneDemo6 {
 
 // Параметризированный конструктор
 
-class BoxOneDemo7 {
+class DoxNewOneDemo7 {
     public static void main(String[] args) {
-        BoxOne myBoxOne1 = new BoxOne(10, 20, 15);
-        BoxOne myBoxOne2 = new BoxOne(3, 6, 9);
+        DoxNewOne myDoxNewOne1 = new DoxNewOne(10, 20, 15);
+        DoxNewOne myDoxNewOne2 = new DoxNewOne(3, 6, 9);
 
         double vol;
 
         // получить объем первого параллелепипеда
-        vol = myBoxOne1.volume();
+        vol = myDoxNewOne1.volume();
         System.out.println("Объем равен " + vol);
 
 
         // Получить объем второгго параллелепипеда
-        vol = myBoxOne2.volume();
+        vol = myDoxNewOne2.volume();
         System.out.println("Объем равен " + vol);
 
     }
@@ -1413,24 +1413,24 @@ class OverLoad2 {
 
 
 
-class Box {
+class DoxNew {
     double width;
     double height;
     double depth;
 
-    Box(double w, double h, double d) {
+    DoxNew(double w, double h, double d) {
         width = w;
         height = h;
         depth = d;
     }
 
-    Box() {
+    DoxNew() {
         width = -1;
         height = -1;
         depth = -1;
     }
 
-    Box(double len) {
+    DoxNew(double len) {
         width = height = depth = len;
     }
 
@@ -1438,7 +1438,7 @@ class Box {
         return width * height * depth;
     }
 
-    Box(Box ob) {
+    DoxNew(DoxNew ob) {
         width = ob.width;
         height = ob.height;
         depth = ob.depth;
@@ -1447,17 +1447,17 @@ class Box {
 
 class OverloadCons {
     public static void main(String[] args) {
-        Box mybox1 = new Box(10, 20, 15);
-        Box mybox2 = new Box();
-        Box mycube = new Box(7);
+        DoxNew mydoxNew1 = new DoxNew(10, 20, 15);
+        DoxNew mydoxNew2 = new DoxNew();
+        DoxNew mycube = new DoxNew(7);
 
         double vol;
 
-        vol = mybox1.volume();
-        System.out.println("объем mybox1 равен " + vol);
+        vol = mydoxNew1.volume();
+        System.out.println("объем mydoxNew1 равен " + vol);
 
-        vol = mybox2.volume();
-        System.out.println("объем mybox2 равен " + vol);
+        vol = mydoxNew2.volume();
+        System.out.println("объем mydoxNew2 равен " + vol);
 
         vol = mycube.volume();
         System.out.println("объем mycube равен " + vol);
@@ -1508,18 +1508,18 @@ class PassOb {
 
 class OverloadCons2 {
     public static void main(String[] args) {
-        Box mybox1 = new Box(10, 20, 15);
-        Box mybox2 = new Box();
-        Box mycube = new Box(7);
+        DoxNew mydoxNew1 = new DoxNew(10, 20, 15);
+        DoxNew mydoxNew2 = new DoxNew();
+        DoxNew mycube = new DoxNew(7);
 
-        Box myclone = new Box(mybox1);
+        DoxNew myclone = new DoxNew(mydoxNew1);
         double vol;
 
-        vol = mybox1.volume();
-        System.out.println("объем mybox1 равен "+vol);
+        vol = mydoxNew1.volume();
+        System.out.println("объем mydoxNew1 равен "+vol);
 
-        vol = mybox2.volume();
-        System.out.println("объем mybox2 равен "+vol);
+        vol = mydoxNew2.volume();
+        System.out.println("объем mydoxNew2 равен "+vol);
 
         vol = mycube.volume();
         System.out.println("объем mycube равен "+vol);
@@ -1587,6 +1587,29 @@ class RetOb {
     }
 }
 
+
+// Простой тест рекурсии
+
+class Factorial {
+    int fact(int n) {
+        int result;
+
+        if (n==1) return 1;
+        result = fact(n-1) * n;
+        return result;
+    }
+}
+
+class Recursion {
+    public static void main(String[] args) {
+        Factorial f = new Factorial();
+
+        System.out.println("Факториал 3 равен "+f.fact(3));
+        System.out.println("Факториал 4 равен "+f.fact(4));
+        System.out.println("Факториал 5 равен "+f.fact(5));
+    }
+}
+
 class RecTest {
     int values[];
 
@@ -1611,6 +1634,692 @@ class Recursion2 {
         ob.printArray(10);
     }
 }
+
+
+// В этой программе демонстрируется отличие модификаторов public и private
+
+class Test4 {
+    int a;
+    public int b;
+    private int c;
+
+    void setC(int i) {
+        c = i;
+    }
+
+    int getC() {
+        return c;
+    }
+}
+
+class AccessTest {
+    public static void main(String[] args) {
+        Test4 ob = new Test4();
+
+        ob.a = 10;
+        ob.b = 20;
+
+        ob.setC(100); // доступ только через сеттер потому что переменная в привате
+
+        System.out.println("a, b, и c:" + ob.a + " " + ob.b + " " + ob.getC());
+    }
+}
+
+
+// в этом классе определяется целочитсленный стек, который может содержать 10 значений
+
+class Stack2 {
+    private int stck[] = new int[10];
+    private int tos;
+
+    //инициализировать вершину стека
+    Stack2() {
+        tos = -1;
+    }
+
+    // Разместить элемент в стеке
+    void push(int item) {
+        if (tos==9) {
+            System.out.println("Стек заполнен.");
+        } else
+            stck[++tos] = item;
+    }
+
+    // Извелчь элемент из стека
+    int pop() {
+        if (tos < 0) {
+            System.out.println("Стек не загружен");
+            return 0;
+        }
+        else
+            return stck[tos--];
+    }
+}
+
+
+class TestStack2 {
+    public static void main(String[] args) {
+        Stack2 mysctack1 = new Stack2();
+        Stack2 mysctack2 = new Stack2();
+
+        for (int i=0; i<10; i++) mysctack1.push(i);
+        for (int i=10; i<20; i++) mysctack2.push(i);
+
+        System.out.println("Sctack в mystack1: ");
+        for (int i=0; i<10; i++)
+            System.out.println(mysctack1.pop());
+
+        System.out.println("Sctack в mystack2: ");
+        for (int i=0; i<10; i++)
+            System.out.println(mysctack2.pop());
+
+    }
+}
+
+
+// продемонстрировать статические переменные, методы и блоки кода
+
+class UseStatic {
+    static int a = 3;
+    static int b;
+
+    static void meth(int x) {
+        System.out.println("x = " + x);
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+
+    static {
+        System.out.println("Статическией блок инициализирован.");
+        b = a * 4;
+    }
+
+    public static void main(String[] args) {
+        meth(42);
+    }
+}
+
+class StatickDemo {
+    static int a = 42;
+    static int b = 99;
+
+    static void callme() {
+        System.out.println("a = " +a);
+    }
+}
+
+class StsickByName {
+    public static void main(String[] args) {
+        StatickDemo.callme();
+        System.out.println("b = " + StatickDemo.b);
+    }
+}
+
+// В этой программе демонстрируется применение члена длинны массива
+
+class Length {
+    public static void main(String[] args) {
+        int a1[] = new int[10];
+        int a2[] = {3, 5, 7, 1, 8, 99, 44, -10};
+        int a3[] = {4, 3, 2, 1};
+
+        System.out.println("длинна a1 равна "+a1.length);
+        System.out.println("длинна a2 равна "+a2.length);
+        System.out.println("длинна a3 равна "+a3.length);
+    }
+}
+
+
+// усовершенстваованный класс Stack, в котором использован член длинны массива
+
+class Stack3 {
+    private int stck[];
+    private int tos;
+
+    Stack3(int size) {
+        stck = new int[size];
+        tos = -1;
+    }
+
+    void push(int item) {
+        if (tos==stck.length-1)
+            System.out.println("Стек заполнен");
+        else stck[++tos] = item;
+    }
+
+    int pop() {
+        if (tos < 0) {
+            System.out.println("Стек не загружен");
+            return 0;
+        } else
+            return stck[tos--];
+    }
+}
+
+class TsetStack2 {
+    public static void main(String[] args) {
+        Stack3 mysctack1 = new Stack3(5);
+        Stack3 mysctack2 = new Stack3(8);
+
+        for (int i=0; i<10; i++) mysctack1.push(i);
+        for (int i=10; i<20; i++) mysctack2.push(i);
+
+        System.out.println("Sctack в mystack1: ");
+        for (int i=0; i<10; i++)
+            System.out.println(mysctack1.pop());
+
+        System.out.println("Sctack в mystack2: ");
+        for (int i=0; i<10; i++)
+            System.out.println(mysctack2.pop());
+
+    }
+}
+
+// Продемонстрировать применение внутреннего класса
+
+class Outher {
+    int outher_x = 100;
+
+    void test() {
+        Inner inner = new Inner();
+        inner.display();
+    }
+
+    class Inner {
+        void display() {
+            System.out.println("Вывод: outher_x = " + outher_x);
+        }
+    }
+}
+
+class InnetClassDemo {
+    public static void main(String[] args) {
+        Outher outher = new Outher();
+        outher.test();
+    }
+}
+
+// Определить внутренний класс в цикле for
+
+class Outher1 {
+    int outer_x = 100;
+
+    void test() {
+        for (int i=0; i<10; i++) {
+            class Inner {
+                void display() {
+                    System.out.println("Вывод: outer_x = " + outer_x);
+                }
+            }
+            Inner inner = new Inner();
+            inner.display();
+        }
+    }
+}
+
+class InnerClassDemo1 {
+    public static void main(String[] args) {
+        Outher1 outher = new Outher1();
+        outher.test();
+    }
+}
+
+
+// Продемонстрировать применение символьных строк
+
+class StringDemo {
+    public static void main(String[] args) {
+        String str1 = "Первая строк";
+        String str2 = "Вторая строк";
+        String str3 = str1+" и "+str2;
+
+        System.out.println(str1);
+        System.out.println(str2);
+        System.out.println(str3);
+    }
+}
+
+// Применение некоторых методов из класса String
+
+class StringDemo2 {
+    public static void main(String[] args) {
+        String str1 = "Первая строка";
+        String str2 = "Вторая строка";
+        String str3 = str1;
+
+        System.out.println("Длинна строки str1: " + str1.length());
+
+        System.out.println("Символ по индексу 3 в строке str1: " + str1.charAt(3));
+
+        if (str1.equals(str2))
+            System.out.println("str1 == str2");
+        else
+            System.out.println("str1 != str2");
+
+        if (str1.equals(str3))
+            System.out.println("str1 == str3");
+        else
+            System.out.println("str1 != str3");
+
+    }
+}
+
+// Продемонстрировать применение массивов объектов типа String
+
+class StringDemo3 {
+    public static void main(String[] args) {
+        String str[] = {"один", "два","три"};
+        for (int i=0; i<str.length; i++)
+            System.out.println("str["+i+"]: "+str[i]);
+    }
+}
+
+// Вывести все аргумненты командной строки
+
+class CommandLine {
+    public static void main(String[] args) {
+        for (int i=0; i<args.length; i++)
+            System.out.println("args[" + i + "]: " + args[i]);
+
+    }
+}
+
+// Использовать массим для передачи методу переменного количества аругментов.
+// Это старый подход к обработке аргументов переменной длинны
+
+class PassArray {
+    static void vaTest(int v[]) {
+        System.out.print("Количество аругментов: " + v.length + " Содержимое: ");
+
+        for (int x : v) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        int n1[] = {10};
+        int n2[] = {1, 2, 3};
+        int n3[] = { };
+
+        vaTest(n1);
+        vaTest(n2);
+        vaTest(n3);
+
+    }
+}
+
+
+//*************************************************************************************
+//********************************** НЕ ЗНАЛ ******************************************
+//*************************************************************************************
+
+class VarArgs {
+    // Теперь метод vaTest() объявляется с аругментами переменной длинны
+    static void vaTest(int ... v) {
+        System.out.print("Количество аругментов: " + v.length + " Содержимое: ");
+
+        for (int x : v) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        vaTest(10);
+        vaTest(1, 2, 3);
+        vaTest();
+
+    }
+}
+
+//*************************************************************************************
+//********************************** НЕ ЗНАЛ ******************************************
+//*************************************************************************************
+
+
+
+// Использовать аргумент переменной длинны вместе со стандартными аргументами
+
+class VarArgs2 {
+    static void vaTest(String msg, int ... v) {
+        System.out.print(msg + v.length + " Содержимое: ");
+
+        for (int x : v)
+            System.out.print(x + " ");
+
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        vaTest("Один параметр переменной длинны: ", 10);
+        vaTest("Три параметра переменной длинны: ", 1, 2, 3);
+        vaTest("Без параметров переменной длинны: ");
+    }
+
+}
+
+
+// Аругменты переменной длинны и перегрузка
+class VarArgs3 {
+    static void vaTest(int ... v) {
+        System.out.print("vaTest(int... v): " + v.length + " Содержимое: ");
+        for (int x : v)
+            System.out.print(x + " ");
+        System.out.println();
+    }
+
+    static void vaTest(boolean ... v) {
+        System.out.print("vaTest(boolean... v): " + v.length + " Содержимое: ");
+        for (boolean x : v)
+            System.out.print(x + " ");
+        System.out.println();
+
+    }
+
+    static void vaTest(String msg, int... v) {
+        System.out.print("vaTest(String msg, int... v): " + v.length + " Содержимое: ");
+        for (int x : v)
+            System.out.print(x + " ");
+        System.out.println();
+
+    }
+
+    public static void main(String[] args) {
+        vaTest(1, 2, 3);
+        vaTest("Проверка: ", 10, 20);
+        vaTest(true, false, false);
+    }
+}
+
+
+// Наследование *********************************************************************
+
+// Создать суперкласс
+
+class A {
+    int i, j;
+
+    void showij() {
+        System.out.println(i + " " + j);
+    }
+}
+
+class B extends A {
+    int k;
+
+    void showk() {
+        System.out.println(k);
+    }
+
+    void sum() {
+        System.out.println(i+j+k);
+    }
+}
+
+class SimpleInheritance {
+    public static void main(String[] args) {
+        A superOb = new A();
+        B subOb = new B();
+
+
+        // суперкалсс может использоваться самостоятельно
+        superOb.i = 10;
+        superOb.j = 20;
+        System.out.println("Содержимое объекта superOb: ");
+        superOb.showij();
+        System.out.println();
+
+
+        // Суперкалсс имеет доступ ко всем открытым членам своего суперкласса
+        subOb.i = 7;
+        subOb.j = 8;
+        subOb.k = 9;
+        System.out.println("Содержимое объекта subOb: ");
+        subOb.showij();
+        subOb.showk();
+
+        System.out.println();
+        System.out.println("Сумма i, j и k в объекте subOb: ");
+        subOb.sum();
+    }
+}
+
+
+// В Иерархии классов закрытые члены остаются закрытми в пределах своего класса
+
+
+class Box {
+    double width;
+    double height;
+    double depth;
+
+    Box(Box ob) {
+        width = ob.width;
+        height = ob.height;
+        depth = ob.depth;
+    }
+
+    Box(double w, double h, double d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+
+    Box() {
+        width = -1;
+        height = -1;
+         depth = -1;
+    }
+
+    Box(double len) {
+        width = height = depth = len;
+    }
+
+    double volume() {
+        return width*height*depth;
+    }
+}
+
+class BoxWeight extends Box {
+    double weight;
+
+    BoxWeight(double w, double h, double d, double m) {
+        width = w;
+        height = h;
+        depth = d;
+        weight = m;
+    }
+}
+
+class DemoBoxWeight {
+    public static void main(String[] args) {
+        BoxWeight mybox1 = new BoxWeight(10, 20, 15, 34.3);
+        BoxWeight mybox2 = new BoxWeight(2, 3, 4, 0.076);
+        double vol;
+
+        vol = mybox1.volume();
+        System.out.println("объем mybox1 равен " + vol);
+        System.out.println("Вес mybox1 hfdty " + mybox1.weight);;
+        System.out.println();
+
+        vol = mybox2.volume();
+        System.out.println("объем mybox2 равен " + vol);
+        System.out.println("Вес mybox2 hfdty " + mybox2.weight);;
+    }
+}
+
+
+// Расширяем класс Box добалвяя в него свойство цвета
+
+class ColorBox extends Box {
+    int color;
+
+    ColorBox(double w, double h, double d, int c) {
+        width = w;
+        height = h;
+        depth = d;
+        color = c;
+    }
+}
+
+class RefDemo {
+    public static void main(String[] args) {
+        BoxWeight boxweight = new BoxWeight(3, 5, 7, 8.37);
+        Box box = new Box();
+        double vol;
+        
+        vol = boxweight.volume();
+        System.out.println("объем boxweight равен " +vol);
+        System.out.println("Вес boxweight равен " + boxweight.weight);
+        System.out.println();
+        
+        // Присвоить ссылке на объект BoxWeight ссылки на объект Box
+        box = boxweight;
+        vol = box.volume(); // Верно т.к. метод volume() определен в лкассе Box
+        System.out.println("Объем box равен " + vol);
+
+        // ОШИБКА ! System.out.println("Вес box равен " + box.weight);
+    }
+}
+
+class BoxWeight2 extends Box {
+    double weight;
+
+    BoxWeight2(double w, double h, double d, double m) {
+        super(w, h, d);
+        weight = m;
+    }
+}
+
+
+class BoxTwo {
+    private double width;
+    private double height;
+    private double depth;
+
+    BoxTwo(BoxTwo ob) {
+        width = ob.width;
+        height = ob.height;
+        depth = ob.depth;
+    }
+
+    BoxTwo(double w, double h, double d) {
+        width = w;
+        height = h;
+        depth = d;
+    }
+
+    BoxTwo() {
+        width = -1;
+        height = -1;
+        depth = -1;
+    }
+
+    BoxTwo(double len) {
+        width = height = depth = len;
+    }
+
+    double volume() {
+        return width*height*depth;
+    }
+}
+
+
+class BoxTwoWeight extends BoxTwo{
+    double weight;
+
+    BoxTwoWeight(BoxTwoWeight ob) {
+        super(ob);
+        weight = ob.weight;
+    }
+
+    BoxTwoWeight(double w, double h, double d, double m) {
+        super(w, h, d);
+        weight = m;
+    }
+
+    BoxTwoWeight() {
+        super();
+        weight = -1;
+    }
+
+    BoxTwoWeight(double len, double m) {
+        super(len);
+        weight = m;
+    }
+}
+
+class DemoSuper {
+    public static void main(String[] args) {
+        BoxTwoWeight mybox1 = new BoxTwoWeight(10, 20, 15, 34.3);
+        BoxTwoWeight mybox2 = new BoxTwoWeight(2, 3, 4, 0.076);
+        BoxTwoWeight mybox3 = new BoxTwoWeight();
+        BoxTwoWeight mycube = new BoxTwoWeight(3, 2);
+        BoxTwoWeight myclone = new BoxTwoWeight(mybox1);
+        double vol;
+
+        vol = mybox1.volume();
+        System.out.println("Объем mybox1 равен " + vol);
+        System.out.println("Вес mybox1 равен " + mybox1.weight);
+        System.out.println();
+
+        vol = mybox2.volume();
+        System.out.println("Объем mybox2 равен " + vol);
+        System.out.println("Вес mybox2 равен " + mybox2.weight);
+        System.out.println();
+
+        vol = mybox3.volume();
+        System.out.println("Объем mybox3 равен " + vol);
+        System.out.println("Вес mybox3 равен " + mybox3.weight);
+        System.out.println();
+
+        vol = mycube.volume();
+        System.out.println("Объем mycube равен " + vol);
+        System.out.println("Вес mycube равен " + mycube.weight);
+        System.out.println();
+
+        vol = myclone.volume();
+        System.out.println("Объем myclone равен " + vol);
+        System.out.println("Вес myclone равен " + myclone.weight);
+        System.out.println();
+
+    }
+}
+
+// Использовать ключевое слово super с  целью предотвратить сокрытие имен
+
+class Atest {
+    int i;
+}
+
+class Btest extends Atest {
+    int i;
+
+    Btest(int a, int b) {
+        super.i = a;
+        i = b;
+    }
+
+    void show() {
+        System.out.println("Член i в суперклассе: " + super.i);
+        System.out.println("Член i в подклассе: " + i);
+    }
+}
+
+class UseSuper {
+    public static void main(String[] args) {
+        Btest subOb = new Btest(1, 2);
+
+        subOb.show();
+    }
+}
+
+
+
+
+
+
 
 
 

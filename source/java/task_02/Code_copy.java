@@ -4,6 +4,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import task_01.Test;
 
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * Created by Demchenko Sergey on 19.06.2016.
@@ -2661,6 +2662,449 @@ class AccountBalance {
         for (int i=0; i<3; i++) current[i].show();
     }
 }
+
+
+
+interface Callback {
+    void callback(int param);
+}
+
+class Client implements Callback {
+
+    //Реализовать интерфейс Callback
+
+    public void callback(int p) {
+        System.out.println("Метод callback(), вызываемый со значением " + p);
+    }
+
+    void nonIfaceMeth() {
+        System.out.println("В классах, реализующих интерфейсы, могут определяться и другие члены");
+    }
+}
+
+
+class TestInterface {
+    public static void main(String[] args) {
+        Callback c = new Client();
+        c.callback(42);
+    }
+}
+
+
+// Еще одна реализация интерфейса Callback
+
+class AnotherClient implements Callback {
+
+    public void callback(int p) {
+        System.out.println("Еще один вариант метода callback()");
+        System.out.println("p в квадрате равно " + (p*p));
+    }
+}
+
+class TestInterface2 {
+    public static void main(String[] args) {
+        Callback c = new Client();
+        AnotherClient ob = new AnotherClient();
+
+        c.callback(42);
+
+        c = ob;
+
+        c.callback(42);
+    }
+}
+//*****************************************************************************************
+//*****************************************************************************************
+
+//                          ----------- НЕ ЗНАЛ ---------
+// абстрактный класс унаследованный от интерфейса не обязан реализовывать методы интерфейса
+
+//*****************************************************************************************
+//*****************************************************************************************
+
+abstract class Incomplete implements Callback {
+    int a, b;
+
+    void show() {
+        System.out.println(a + " " + b);
+    }
+}
+
+
+// Пример вложеноого интерфейса
+
+// Этот класс содержит интерфейс как свой член
+
+class Ainter {
+    // это вложеннвый интерфейс
+    public interface NestedIF {
+        boolean isNotNegative(int x);
+    }
+}
+
+// Класс В реализует вложенный интерфейс
+
+class Binter implements Ainter.NestedIF {
+
+    public boolean isNotNegative(int x) {
+        return x < 0 ? false : true;
+    }
+}
+
+class NestedIFDemo {
+    public static void main(String[] args) {
+        Ainter.NestedIF nif = new Binter();
+
+        if (nif.isNotNegative(10))
+            System.out.println("Число 10 неотрицательное");
+        if (nif.isNotNegative(-12))
+            System.out.println("Это не будет выполнено");
+    }
+}
+
+
+// Определить интерфейс для целочисленного стека
+
+interface IntStack {
+    void push(int item);
+    int pop();
+
+    default void clear() {
+        System.out.println("Метод clear() не раелизован.");
+    }
+}
+
+// реализация интерфейса IntStack для стека фиксированного размера
+
+class FixedStack implements IntStack {
+    private int stck[];
+    private int tos;
+
+    FixedStack(int size) {
+        stck = new int[size];
+        tos = -1;
+    }
+
+    public void push(int item) {
+        if (tos==stck.length-1)
+            System.out.println("Стек заполнен.");
+        else
+            stck[++tos] = item;
+    }
+
+    public int pop() {
+        if (tos < 0) {
+            System.out.println("Стек не загружен");
+            return 0;
+        }
+        else
+            return stck[tos--];
+    }
+}
+
+class IFTest {
+    public static void main(String[] args) {
+        FixedStack mystack1 = new FixedStack(5);
+        FixedStack mystack2 = new FixedStack(8);
+
+        //Разместить числа в стеке
+        for (int i=0; i<5; i++) mystack1.push(i);
+        for (int i=10; i<8; i++) mystack2.push(i);
+
+        //Извлечь эти числа из стека
+        System.out.println("Содержимое стека mystack1:");
+        for (int i=0; i<5; i++)
+            System.out.println(mystack1.pop());
+
+        System.out.println("Содержимое стека mystack2:");
+        for (int i=0; i<8; i++)
+            System.out.println(mystack2.pop());
+    }
+}
+
+
+// Реализация "наращиваемого" стека
+
+class DynStack implements IntStack {
+    private int stck[];
+    private int tos;
+
+    DynStack(int size) {
+        stck = new int[size];
+        tos = -1;
+    }
+
+    // Разместить элемнт стеке
+    public void push(int item) {
+        // если стек заполнен, выделить память под стек большего размера
+        if (tos==stck.length-1) {
+            int temp[] = new int[stck.length * 2]; // удвоить размер
+            for (int i=0; i>stck.length; i++) temp[i] = stck[i];
+            stck = temp;
+            stck[++tos] = item;
+        }
+        else
+            stck[++tos] = item;
+    }
+
+    // извлечь элемент из стека
+    public int pop() {
+        if (tos < 0) {
+            System.out.println("Стек не загружен");
+            return 0;
+        }
+        else
+            return stck[tos--];
+    }
+}
+
+class IFTest2 {
+    public static void main(String[] args) {
+        DynStack mystack1 = new DynStack(5);
+        DynStack mystack2 = new DynStack(8);
+
+        //В этих циклах увеличиваются размеры каждого стека
+        for (int i=0; i<12; i++) mystack1.push(i);
+        for (int i=0; i<20; i++) mystack1.push(i);
+
+        System.out.println("Стек в mystack1: ");
+        for (int i=0; i<12; i++)
+            System.out.println(mystack1.pop());
+
+        System.out.println("Стек в mystack2: ");
+        for (int i=0; i<20; i++)
+            System.out.println(mystack2.pop());
+    }
+}
+
+
+/*
+Создать переменную интерфейса и обратиться к стекам через неё
+ */
+
+class IFTest3 {
+    public static void main(String[] args) {
+        IntStack mystack;
+        DynStack ds = new DynStack(5);
+        FixedStack fs = new FixedStack(8);
+
+        mystack = ds; // загрузить динамический стек
+        // разместить числа встеке
+        for (int i=0; i<12; i++) mystack.push(i);
+
+        mystack = fs; // загрузить фиксировнный стек
+        // разместить числа встеке
+        for (int i=0; i<12; i++) mystack.push(i);
+
+        mystack = ds;
+        System.out.println("Значения в динамическом стеке: ");
+        for (int i=0; i<12; i++)
+            System.out.println(mystack.pop());
+
+        mystack = fs;
+        System.out.println("Значения в фиксированном стеке: ");
+        for (int i=0; i<8; i++)
+            System.out.println(mystack.pop());
+    }
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////
+
+interface ShaderConstants {
+    int NO = 0;
+    int YES = 1;
+    int MAYBE = 2;
+    int LATER = 3;
+    int SOON = 4;
+    int NEVER = 5;
+}
+
+class Question implements ShaderConstants {
+    Random rand = new Random();
+    int ask() {
+        int prob = (int) (100 * rand.nextDouble());
+        if (prob < 30)
+            return NO;
+        else if (prob < 60)
+            return YES;
+        else if (prob < 75)
+            return LATER;
+        else if (prob < 98)
+            return SOON;
+        else
+            return NEVER;
+    }
+}
+
+
+class AskMe implements ShaderConstants {
+    static void answer(int result) {
+        switch (result) {
+            case NO:
+                System.out.println("Нет");
+                break;
+            case YES:
+                System.out.println("Да");
+                break;
+            case MAYBE:
+                System.out.println("Возможно");
+                break;
+            case LATER:
+                System.out.println("Позднее");
+                break;
+            case SOON:
+                System.out.println("Вскоре");
+                break;
+            case NEVER:
+                System.out.println("Никогда");
+                break;
+        }
+    }
+
+    public static void main(String[] args) {
+        Question q = new Question();
+
+        answer(q.ask());
+        answer(q.ask());
+        answer(q.ask());
+        answer(q.ask());
+    }
+}
+
+
+interface TestA {
+    void met1();
+    void met2();
+}
+
+interface TestB extends TestA {
+    void met3();
+}
+
+class MyClass implements TestB {
+
+
+    @java.lang.Override
+    public void met3() {
+        System.out.println("Реализация метода met3().");
+    }
+
+    @java.lang.Override
+    public void met1() {
+        System.out.println("Реализация метода met1().");
+
+    }
+
+    @java.lang.Override
+    public void met2() {
+        System.out.println("Реализация метода met2().");
+
+    }
+}
+
+class IFExtend {
+    public static void main(String[] args) {
+        MyClass ob = new MyClass();
+
+        ob.met1();
+        ob.met2();
+        ob.met3();
+    }
+}
+
+
+// СТРАНИЦА 256 ------------------------------------------------------------------------------
+
+interface MyIF2 { // ТУТ НАДО УКАЗАТЬ public НО НЕЛЬЗЯ Т.К НУЖНО БУДЕТ ПЕРЕИМЕНОВАТЬ ФАЙЛ
+    int getNumber();
+
+    default String getString() {
+        return "Объект типа String по умолчанию.";
+    }
+}
+
+// Реализовать интерфейс MyIF
+
+class MyIFmp implements MyIF2 {
+
+    @java.lang.Override
+    public int getNumber() {
+        return 100;
+    }
+}
+
+// Использовать метод по умолчанию
+
+
+class DefaultMethodDemo {
+    public static void main(String[] args) {
+
+        //Метод getNumber() можно вызвать, т.к. он явно реализован в классе MyIFmp
+        MyIFmp ob = new MyIFmp();
+        System.out.println(ob.getNumber());
+
+        //Метод getString так же можно вызвать, т.к. в интерфейсе имеется его реализация по умолчанию:
+        System.out.println(ob.getString());
+    }
+}
+
+
+class MyIFFmp implements MyIF2 {
+    public int getNumber() {
+        return 100;
+    }
+
+    public String getString() {
+        return "Это другая символьная строка.";
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

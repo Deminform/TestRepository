@@ -1,7 +1,5 @@
 package task_02.p2;
 
-import java.util.Properties;
-
 /**
  * Created by Demchenko Sergey on 08.07.2016.
  */

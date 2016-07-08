@@ -2316,28 +2316,351 @@ class UseSuper {
 }
 
 
+class Shipment extends BoxTwoWeight {
+    double cost;
+
+    Shipment(Shipment ob) {
+        super(ob);
+        cost = ob.cost;
+    }
+
+    Shipment(double w, double h, double d, double m, double c) {
+        super(w, h, d, m);
+        cost = c;
+    }
+
+    Shipment() {
+        super();
+        cost = -1;
+    }
+}
+
+class DemoShipment {
+    public static void main(String[] args) {
+        Shipment shipment1 = new Shipment(10, 20, 15, 10, 3.41);
+        Shipment shipment2 = new Shipment(2, 3, 4, 0.76, 1.28);
+        double vol;
+
+        vol = shipment1.volume();
+        System.out.println("объем shipment1 равен " + vol);
+        System.out.println("вес shipment1 равен " + shipment1.weight);
+        System.out.println("стоимость доставки: $ " + shipment1.cost);
+        System.out.println();
+
+        vol = shipment2.volume();
+        System.out.println("объем shipment2 равен " + vol);
+        System.out.println("вес shipment2 равен " + shipment2.weight);
+        System.out.println("стоимость доставки: $ " + shipment2.cost);
+        System.out.println();
+    }
+}
 
 
+// Продемонстрировать порядок вызова конструкторов
+
+class Aa {
+    Aa() {
+        System.out.println("в конструкторе А");
+    }
+}
+
+class Bb extends Aa {
+    Bb() {
+        System.out.println("в конструкторе B");
+    }
+}
+
+class Cc extends Bb {
+    Cc() {
+        System.out.println("в конструкторе C");
+    }
+}
+
+class CallingCons {
+    public static void main(String[] args) {
+        Cc c = new Cc();
+    }
+}
 
 
+// Переопределение метода
+
+class Aaa {
+    int i, j;
+    Aaa(int a, int b) {
+        i = a;
+        j = b;
+    }
+
+    void show() {
+        System.out.println(i + " " + j);
+    }
+}
+
+class Bbb extends Aaa {
+    int k;
+
+    Bbb(int a, int b, int c) {
+        super(a, b);
+        k = c;
+    }
+
+    void show() {
+        super.show();
+        System.out.println(k);
+    }
+
+    void show(String msg) {
+        System.out.println(msg + k);
+    }
+}
+
+class Override {
+    public static void main(String[] args) {
+        Bbb b = new Bbb(1, 2, 3);
+        b.show("Это k: ");
+        b.show();
+    }
+}
+
+// Динамическая диспетчеризация методов
+
+class Aaaa {
+    void callme() {
+        System.out.println("В методе callme() из класса Аааа");
+    }
+}
+
+class Bbbb extends Aaaa {
+    void callme() {
+        System.out.println("В методе callme() из класса Вввв");
+    }
+}
+
+class Cccc extends Aaaa {
+    void callme() {
+        System.out.println("В методе callme() из класса Cccc");
+    }
+}
+class Dispatch {
+    public static void main(String[] args) {
+        Aaaa a = new Aaaa();
+        Bbbb b = new Bbbb();
+        Cccc c = new Cccc();
+
+        Aaaa r;
+        r = a;
+        r.callme();
+
+        r = b;
+        r.callme();
+
+        r = c;
+        r.callme();
+    }
+}
+
+// Применение переопределения методов
+
+// Применение полиморфизма во время выполнения
+
+class Figure {
+    double dim1;
+    double dim2;
+
+    Figure(double a, double b) {
+        dim1 = a;
+        dim2 = b;
+    }
+
+    double area() {
+        System.out.println("Пощадь фигуры не определена.");
+        return 0;
+    }
+}
+
+class Rectangle extends Figure {
+
+    Rectangle(double a, double b) {
+        super(a, b);
+    }
+
+    // переопределяем метод для четырехугольника
+    double area() {
+        System.out.println("В области четырехугольника.");
+        return dim1 * dim2;
+    }
+}
+
+class Triangle extends Figure {
+
+    Triangle(double a, double b) {
+        super(a, b);
+    }
+
+    // переопределяем метод для прямоугольного треугольника
+    double area() {
+        System.out.println("В области треугольника.");
+        return dim1 * dim2 / 2;
+    }
+}
+
+class FindAreas {
+    public static void main(String[] args) {
+        Figure f = new Figure(10, 10);
+        Rectangle r = new Rectangle(9, 5);
+        Triangle t = new Triangle(10, 8);
+        Figure figref;
+
+        figref = r;
+        System.out.println("Площадь равна " + figref.area());
+
+        figref = t;
+        System.out.println("Площадь равна " + figref.area());
+
+        figref = f;
+        System.out.println("Площадь равна " + figref.area());
+    }
+}
+
+// Применение абстрактных классов
+
+abstract class Q {
+    abstract void callme();
+
+    void callmetoo() {
+        System.out.println("Это конкретный метод");
+    }
+}
+
+class W extends Q {
+
+    @java.lang.Override
+    void callme() {
+        System.out.println("Реализация метода callme() из класса W.");
+    }
+}
+
+class AbstractDemo {
+    public static void main(String[] args) {
+        W w = new W();
+        w.callme();
+        w.callmetoo();
+    }
+}
+
+// Применение абстрактных метов и классов
+abstract class Figur {
+    double dim1;
+    double dim2;
+    Figur(double a, double b) {
+        dim1 = a;
+        dim2 = b;
+    }
+    abstract double area();
+}
+
+class Rectangl extends Figur {
+
+    Rectangl(double a, double b) {
+        super(a, b);
+    }
+
+    @java.lang.Override
+    double area() {
+        System.out.println("В области четырехугольника");
+        return dim1 * dim2;
+    }
+}
 
 
+class Triangl extends Figur {
+
+    Triangl(double a, double b) {
+        super(a, b);
+    }
+
+    @java.lang.Override
+    double area() {
+        System.out.println("В области треугольника.");
+        return dim1 * dim2 / 2;
+    }
+}
+
+class AbstractArea {
+    public static void main(String[] args) {
+        Rectangl r = new Rectangl(10, 10);
+        Triangl t = new Triangl(9, 5);
+        Figur figur;
+
+        figur = r;
+        System.out.println("Площадь равна " + figur.area());
+
+        figur = t;
+        System.out.println("Площадь равна " + figur.area());
+    }
+}
+
+//********************************* Класс Object ********************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+
+// 1. Object clone() -                  Создает новый объект, не отличающийся от клонируемого
+// 2. boolean equals(Object object) -   Определяет, равен ли один объект другому
+// 3. void finalize() -                 Вызывается перед удаление неиспользуемого объекта
+// 4. Class<?> getClass() -             Получает класс объекта во время выполнения
+// 5. int hashCode() -                  Возвращает хеш-код, связанный с вызывающим объектом
+// 6. void notify() -                   Возобновляет исполнение потока, ожидающего вызывающего объекта
+// 7. notifyAll() -                     Возобновляет исполнение всех потоков, ожидающих вызывающего объекта
+// 8. String toString() -               Возвращает символьную строку, описывающую объект
+// 9. void wait() -                     Ожидает другого потока исполнения
+
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
+//********************************************************************************************
 
 
+//простой пакет
 
+// package MyPack
 
+class Balance {
+    String name;
+    double bal;
 
+    Balance(String n, double b) {
+        name = n;
+        bal = b;
+    }
 
+    void show() {
+        if (bal<0) {
+            System.out.printf("-->");
+        }
+        System.out.println(name + ": $" + bal);
+    }
+}
 
+class AccountBalance {
+    public static void main(String[] args) {
+        Balance current[] = new Balance[3];
 
+        current[0] = new Balance(" aaaaaaaaaa",  123.23);
+        current[1] = new Balance(" bbbbbbbbbb",  157.02);
+        current[2] = new Balance(" cccccccccc",  -12.33);
 
-
-
-
-
-
-
-
+        for (int i=0; i<3; i++) current[i].show();
+    }
+}
 
 
 

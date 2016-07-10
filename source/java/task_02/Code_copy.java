@@ -3061,9 +3061,21 @@ class MyIFFmp implements MyIF2 {
 }
 
 
+interface MyIF {
+    int getNumber();
+
+    default String getString() {
+        return "Объект типа String по умолчанию.";
+    }
+
+    static int getDefaultNumber() {
+        return 0;
+    }
+}
 
 
-
+// Закончил на 264 странице
+// Продолжение в следующем файле
 
 
 

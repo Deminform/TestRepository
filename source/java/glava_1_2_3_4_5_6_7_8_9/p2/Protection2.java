@@ -1,9 +1,9 @@
-package task_02.p2;
+package glava_1_2_3_4_5_6_7_8_9.p2;
 
 /**
  * Created by Demchenko Sergey on 08.07.2016.
  */
-class Protection2 extends task_02.p1.Protection {
+class Protection2 extends glava_1_2_3_4_5_6_7_8_9.p1.Protection {
     Protection2() {
         System.out.println("Конструктор унаследованный из другого пакета");
 

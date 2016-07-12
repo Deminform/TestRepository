@@ -1,7 +1,4 @@
-package task_02;
-
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-import task_01.Test;
+package glava_1_2_3_4_5_6_7_8_9;
 
 import java.io.IOException;
 import java.util.Random;
@@ -35,7 +32,7 @@ import java.util.Random;
             distance = lightspeed * second; // вычислить расстояние
 
             System.out.print("За " + days);
-            System.out.print(" дней свет пройдет около ");
+            System.out.print(" дней, свет пройдет около ");
             System.out.print(distance + " миль.");
 
         }
@@ -2612,7 +2609,7 @@ class AbstractArea {
 
 // 1. Object clone() -                  Создает новый объект, не отличающийся от клонируемого
 // 2. boolean equals(Object object) -   Определяет, равен ли один объект другому
-// 3. void finalize() -                 Вызывается перед удаление неиспользуемого объекта
+// 3. void finalize() -                 Вызывается перед удалением неиспользуемого объекта
 // 4. Class<?> getClass() -             Получает класс объекта во время выполнения
 // 5. int hashCode() -                  Возвращает хеш-код, связанный с вызывающим объектом
 // 6. void notify() -                   Возобновляет исполнение потока, ожидающего вызывающего объекта

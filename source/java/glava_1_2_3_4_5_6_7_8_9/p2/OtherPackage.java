@@ -1,11 +1,11 @@
-package task_02.p2;
+package glava_1_2_3_4_5_6_7_8_9.p2;
 
 /**
  * Created by Demchenko Sergey on 08.07.2016.
  */
 class OtherPackage {
     OtherPackage() {
-        task_02.p1.Protection p = new task_02.p1.Protection();
+        glava_1_2_3_4_5_6_7_8_9.p1.Protection p = new glava_1_2_3_4_5_6_7_8_9.p1.Protection();
         System.out.println("Конструктор из другого пакета");
 
 //        доступно только для данного класса или пакета

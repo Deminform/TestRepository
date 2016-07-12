@@ -1,6 +1,4 @@
-package task_01;
-
-import java.util.Objects;
+package test_task;
 
 public class Test {
 
